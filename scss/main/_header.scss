@@ -1,0 +1,176 @@
+@import '../main/mixins';
+@import '../main/variables';
+
+header {
+ height: 5.375rem;
+ border-bottom: 2px solid rgba(255, 255, 255, 0.2);
+ position: absolute;
+ width: 100%;
+ top: 0;
+ left: 0;
+ z-index: 2000;
+ display: flex;
+
+ .container {
+  @include flex(center, space-between);
+ }
+
+ nav {
+  display: flex;
+  align-items: center;
+
+  ul {
+   margin-right: 3.6875rem;
+   display: flex;
+   align-items: center;
+
+   li {
+    &:not(:last-child) {
+     margin-right: 3rem;
+    }
+
+    a {
+     color: #ffffff;
+     font: 500 1rem/125% $fonte-titulo;
+     transition: all .3s ease;
+
+     &:hover {
+      color: $brand-blue;
+     }
+    }
+   }
+  }
+
+  .btn-mobile {
+   display: none;
+   margin-left: 2.5rem;
+   transition: all .3s ease;
+
+   &.active {
+    transition-delay: 0.8s;
+    transform: rotate(45deg);
+
+    span {
+
+     &:first-child,
+     &:last-child {
+      transition-delay: .4s;
+     }
+
+     &:nth-child(2) {
+      width: 0;
+     }
+
+     &:first-child {
+      transform: translateY(9px);
+     }
+
+     &:last-child {
+      transform: translateY(-9px) rotate(90deg);
+     }
+    }
+   }
+
+   span {
+    display: block;
+    background-color: #fff;
+    width: 30px;
+    height: 2px;
+    border-radius: 9999px;
+    transition: all .4s ease-in-out;
+
+    &:not(:last-child) {
+     margin-bottom: 7px;
+    }
+   }
+  }
+ }
+
+ aside {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: calc(100% - 5.375rem);
+  background-color: $brand-blue-light;
+  background: linear-gradient(100deg, #00A5F0 30%, #00D7D7 98%);
+  padding: 2.5rem 1.5rem;
+  transform: translateY(100%);
+  opacity: 0;
+
+  pointer-events: none;
+  transition: all .4s ease;
+  transition-delay: 0.4s;
+
+  @include flex(center, flex-start);
+  flex-direction: column;
+
+  &.active {
+   transform: translateY(0);
+   opacity: 1;
+   pointer-events: all;
+  }
+
+  ul {
+   margin-bottom: 3.125rem;
+
+   li {
+    display: flex;
+    justify-content: center;
+
+    &:not(:last-child) {
+     margin-bottom: 1.875rem;
+    }
+
+    a {
+     text-align: center;
+     color: #ffffff;
+    }
+   }
+  }
+ }
+
+ @include responsive(1050px) {
+  nav {
+   ul {
+    margin-right: 1.875rem;
+
+    li {
+     &:not(:last-child) {
+      margin-right: 1.875rem;
+     }
+    }
+   }
+  }
+ }
+
+ @include responsive(950px) {
+  nav {
+   ul {
+    display: none;
+   }
+
+   .btn-mobile {
+    display: block;
+   }
+  }
+ }
+
+ @include responsive(480px) {
+  height: 70px;
+
+  .logo {
+   max-width: 110px;
+  }
+
+  nav {
+   .btn {
+    display: none;
+   }
+  }
+
+  aside {
+   height: calc(100% - 70px);
+  }
+ }
+}

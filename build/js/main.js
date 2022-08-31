@@ -1,0 +1,1 @@
+const btnMobile=document.querySelector(".btn-mobile"),menuMobile=document.querySelector("aside");btnMobile.addEventListener("click",()=>{btnMobile.classList.toggle("active"),menuMobile.classList.toggle("active")}),AOS.init({duration:1e3,once:!0,disable:"mobile"});

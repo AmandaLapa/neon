@@ -1,0 +1,185 @@
+footer {
+ padding-top: 49px;
+ background-color: $brand-blue;
+
+ .top {
+  margin-bottom: 57px;
+  padding-bottom: 49px;
+  border-bottom: 1px solid rgba(73, 197, 253, 0.2);
+
+  @include flex(flex-end, space-between);
+
+  .social {
+   display: flex;
+   align-items: center;
+   gap: 30px;
+
+   span {
+    color: rgba(255, 255, 255, 0.7);
+    font-size: 14px;
+   }
+
+   ul {
+    display: flex;
+    align-items: center;
+
+    li {
+     transition: transform .3s;
+
+     &:not(:last-child) {
+      margin-right: 30px;
+     }
+
+     &:hover {
+      transform: scale(1.3);
+     }
+    }
+   }
+  }
+ }
+
+ .content {
+  @include flex(flex-start, space-between);
+  gap: 30px;
+
+  nav {
+   width: 100%;
+   max-width: 70%;
+   display: flex;
+   gap: 50px;
+   flex-wrap: wrap;
+
+   .item {
+    strong {
+     display: block;
+     margin-bottom: 25px;
+     color: #ffffff;
+    }
+
+    ul {
+     li {
+      &:not(:last-child) {
+       margin-bottom: 29px;
+      }
+
+      a {
+       color: rgba(255, 255, 255, 0.7);
+       font-size: 14px;
+       transition: all .3s ease;
+
+       &:hover {
+        color: $brand-yellow;
+       }
+      }
+     }
+    }
+   }
+  }
+
+  .contato {
+   gap: 24px;
+
+   .box {
+    padding: 17px 25px;
+    width: 100%;
+    max-width: 270px;
+
+    display: flex;
+    align-items: center;
+    border-radius: 6px;
+    background-color: rgba(0, 164, 240, 0.3);
+
+    &:not(:last-child) {
+     margin-bottom: 24px;
+    }
+
+    .txt {
+     margin-left: 15px;
+
+     strong,
+     span {
+      color: #ffffff;
+      font-size: 14px;
+     }
+    }
+   }
+  }
+ }
+
+ .rodape {
+  margin-top: 62px;
+  padding-top: 39px;
+  padding-bottom: 38px;
+  border-top: 1px solid rgba(73, 197, 253, 0.2);
+  display: flex;
+
+  position: relative;
+
+  &::after {
+   content: '';
+   position: absolute;
+   bottom: 0;
+   left: 0;
+   background-color: $brand-yellow;
+   width: 100%;
+   height: 4px;
+  }
+
+  p {
+   margin-left: 25px;
+   max-width: 700px;
+   font-size: 14px;
+   color: rgba(255, 255, 255, 0.8);
+  }
+ }
+
+ @include responsive(1030px) {
+  .content {
+   flex-direction: column;
+
+   nav{
+    max-width: 100%;
+   }
+
+   .contato {
+    width: 100%;
+    display: flex;
+
+    .box {
+     max-width: 100%;
+
+     &:not(:last-child) {
+      margin-bottom: 0;
+     }
+    }
+   }
+
+  }
+ }
+
+ @include responsive(600px){
+  .top{
+   padding-bottom: 30px;
+   margin-bottom: 30px;
+   flex-direction: column;
+   align-items: flex-start;
+   gap: 20px;
+   .social{
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 15px;
+   }
+  }
+
+  .content{
+   .contato{
+    flex-direction: column;
+   }
+  }
+
+  .rodape{
+   padding-top: 30px;
+   margin-top: 30px;
+  }
+ }
+}

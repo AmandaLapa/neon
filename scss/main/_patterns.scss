@@ -1,0 +1,212 @@
+@import '../main/variables';
+@import '../main/mixins';
+
+h1,
+h2,
+h3,
+h4 {
+ font-family: $fonte-titulo;
+ color: $gray-600;
+}
+
+h1 {
+ font-size: 4rem;
+ color: #ffffff;
+
+ @media(max-width:550px) {
+  font-size: 40px;
+ }
+}
+
+h2 {
+ font-size: 2.5rem;
+
+ span {
+  color: $gray-200;
+  font-size: inherit;
+  letter-spacing: -1px;
+  line-height: 112%;
+ }
+
+ @media(max-width:550px) {
+  font-size: 32px;
+ }
+}
+
+h3 {
+ font-size: 1.5rem;
+ font-weight: 500;
+ letter-spacing: -0.5px;
+
+ @media(max-width:550px) {
+  font-size: 20px;
+ }
+}
+
+h4 {
+ font-size: 1.25rem;
+
+ @media(max-width:550px) {
+  font-size: 18px;
+ }
+}
+
+h1,
+h2 {
+ font-weight: 600;
+ letter-spacing: -1px;
+ line-height: 112%;
+}
+
+.neon-56-semi {
+ font: 600 3.5rem/5.25rem $fonte-titulo;
+ letter-spacing: -2px;
+
+ @media(max-width:550px) {
+  font-size: 30px;
+ }
+}
+
+.neon-24-semi {
+ font: 600 1.5rem/120% $fonte-titulo;
+ letter-spacing: -0.5px;
+
+ @media(max-width:550px) {
+  font-size: 18px;
+ }
+}
+
+.neon-24-medium {
+ font: 500 1.5rem/120% $fonte-titulo;
+ letter-spacing: -0.5px;
+}
+
+.neon-18-medium {
+ font: 500 1.125rem/125% $fonte-titulo;
+}
+
+.neon-16-medium {
+ font: 500 1rem/125% $fonte-titulo;
+}
+
+.texto-18 {
+ font: 400 1.125rem/150% $fonte-geral;
+
+ @media(max-width:550px) {
+  font-size: 16px;
+ }
+}
+
+.texto-14 {
+ font: 400 14px/150% $fonte-geral;
+}
+
+.btn {
+ width: fit-content;
+ height: 48px;
+ font: 600 1rem/100% $fonte-titulo;
+ text-align: center;
+ @include flex(center, center);
+ border-radius: 122px;
+ transition: all .3s ease;
+
+ &.btn-transparent {
+  padding: 0 1.125rem;
+  color: #ffffff;
+  background-color: transparent;
+  border: 1px solid #ffffff;
+
+  &:hover {
+   color: $brand-green;
+   background-color: #ffffff;
+  }
+ }
+
+ &.btn-color {
+  padding: 0 1.6875rem;
+  height: 48px;
+  color: $brand-yellow-dark;
+  background-color: $brand-yellow;
+
+  &:hover {
+   background-color: $brand-yellow-light;
+  }
+ }
+
+ &.btn-white {
+  padding: 0 1.125rem;
+  color: $brand-blue-light;
+
+  &:hover {
+   background-color: $brand-blue-light;
+   color: #ffffff;
+  }
+ }
+}
+
+.card {
+ padding: 2.3125rem 2rem 1.4375rem;
+ min-height: 13.0625rem;
+ background-color: $gray-100;
+ border-radius: 8px;
+
+ .top-card {
+  margin-bottom: 1.3125rem;
+  @include flex(center, space-between);
+
+  strong {
+   color: $gray-500;
+  }
+ }
+
+}
+
+@keyframes float {
+ 0% {
+  transform: translatey(0px);
+ }
+
+ 50% {
+  transform: translatey(-20px);
+ }
+
+ 100% {
+  transform: translatey(0px);
+ }
+}
+
+@keyframes pulse {
+ 0% {
+  transform: scale(1);
+ }
+
+ 50% {
+  transform: scale(1.2);
+ }
+
+ 100% {
+  transform: scale(1);
+ }
+}
+
+@keyframes shake {
+ 0% {
+  transform: rotate(0deg);
+ }
+
+ 25% {
+  transform: rotate(5deg);
+ }
+
+ 50% {
+  transform: rotate(0eg);
+ }
+
+ 75% {
+  transform: rotate(-5deg);
+ }
+
+ 100% {
+  transform: rotate(0deg);
+ }
+}
